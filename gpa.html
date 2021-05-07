@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>cars 4 sale</title>
+<html><head><title>Grade Site</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -31,18 +31,18 @@
           <table class="table table-bordered table-striped">
               <tr>
 				  <th>id</th>
-                  <th>first_name</th>
-                  <th>last_name</th>
-                  <th>credit_hrs</th>
-                  <th>gpa_points</th>
+                  <th>first name</th>
+                  <th>last name</th>
+                  <th>credit hrs</th>
+                  <th>gpa points</th>
                   <th>major</th>
                   </tr>
-			 <tr ng-repeat = "car in cars | filter:search_text ">
-                  <td>{{gpa.id}}</td>
-                  <td>{{gpa.first_name}}</td>
-                  <td>{{gpa.last_name}}</td>
-                  <td>{{gpa.credit_hrs}}</td>
-                  <td>{{gpa.gpa_points}}</td>
+			 <tr ng-repeat = "student in students | filter:search_text ">
+                  <td>{{student.id}}</td>
+                  <td>{{student.first name}}</td>
+                  <td>{{student.last name}}</td>
+                  <td>{{student.credit hrs}}</td>
+                  <td>{{student.gpa points}}</td>
               </tr>
          </table>
 		 
