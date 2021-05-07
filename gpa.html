@@ -54,19 +54,10 @@ app.controller('gpaCtrl', function($scope, $http) {
     
    $http.get("students.json")          
      .then(function (response) {
-	    $scope.students = response.data; 
-		
-		
+	    $scope.students = response.data;  
      });
-	 
-	
 
 });
-
-$scope.convertToInt = function(
-$scope.gpa_points.toFixed(1);
-)
-
 
 </script>
 </body></html>
