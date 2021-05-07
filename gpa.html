@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><title>Grade Site</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script> 
+</head>
+
+<body ng-app = "gpaApp">
+
+<div class="container">
+<nav class="navbar navbar-inverse">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Our Website</a>
+    </div>
+    <div>
+       <ul class="nav navbar-nav">
+           <li class="active"><a href="index.html">All Advisees </a></li>
+           <li><a href="gpa.html">Grade Point Averages</a></li>
+       </ul>
+    </div>
+
+</nav>
+
+<div ng-controller = "gpaCtrl">
+
+<h2>Advisees</h2>
+
+<p><input type='text' ng-model='search_text' > Enter Search text</p>
+          <table class="table table-bordered table-striped">
+              <tr>
+				  <th>id</th>
+                  <th>first_name</th>
+                  <th>last_name</th>
+                  <th>credit_hrs</th>
+                  <th>gpa_points</th>
+                  <th>major</th>
+                  </tr>
+			 <tr ng-repeat = "student in students | filter:search_text ">
+                  <td>{{gpa.id}}</td>
+                  <td>{{gpa.first_name}}</td>
+                  <td>{{gpa.last_name}}</td>
+                  <td>{{gpa.credit_hrs}}</td>
+                  <td>{{gpa.gpa_points}}</td>
+              </tr>
+         </table>
+		 
+</div>   
+</div>
+
+<script>
+var app = angular.module('gpaApp', []);
+	  
+		  
+app.controller('gpaCtrl', function($scope, $http) {
+    
+   $http.get("students.json")          
+     .then(function (response) {
+	    $scope.students = response.data;  
+     });
+
+});
+
+</script>
+</body></html>
